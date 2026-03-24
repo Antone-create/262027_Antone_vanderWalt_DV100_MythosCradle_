@@ -10,7 +10,6 @@ body{
 
 .topNav img{
     margin-left: 1.5em;
-    size: 50px;
 }
 
 .topNav a{
@@ -34,5 +33,11 @@ body{
 
 .topNav a.active{
     background-color: #003424;
+    color: white;
+}
+
+.headerContainer{
+    position: relative;
+    text-align: center;
     color: white;
 }
