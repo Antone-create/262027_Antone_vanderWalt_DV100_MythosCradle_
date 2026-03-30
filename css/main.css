@@ -163,6 +163,7 @@ body{
 
 main{
     width: 100%;
+    background-color: #FFFFFF;
 }
 
 /* Shared */
@@ -213,7 +214,7 @@ main{
 }
 
 .contactSection{
-    background-color: #012f78;
+    /*background-color: #012f78;*/
     color: white;
     display: flex;
     justify-content: center;
@@ -225,6 +226,12 @@ main{
 
 .contactContainer{
     display: flex;
+    width: 100%;
+    gap: 60px;
+}
+
+.contact-form {
+
 }
 
 .contactInfo, 
@@ -232,8 +239,58 @@ main{
     width: 50%;
 }
 
+.contactForm {
+    background-image: linear-gradient(to right, dodgerblue, darkcyan);
+    border-radius: 20px;
+}
+
+.contactInfo h1 {
+    color: #11c3ec;
+}
+
+.contactForm {
+    padding: 20px;
+    border: 1px solid white;
+    display: block;
+}
+
+.contactForm .formElement {
+    display: block !important;
+}
+
+.contactForm .formElement label {
+    display: block;
+    color: #ffffff;
+    margin-bottom: 15px;
+    padding: 2px;
+    font-size: 12px;
+}
+
+.contactForm .formElement input,
+.contactForm .formElement textarea {
+    margin: 10px 0 15px 0;
+    width: 100%;
+    border-radius: 12px;
+    font-size: 12px;
+    color: grey;
+    background-color: #FFFFFF;
+    padding: 15px;
+}
+
+.contactForm button {
+    background-color: #4dd7ff;
+    color: white;
+    box-shadow: none;
+    width: 40%;
+    padding: 15px;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
 .contactAbout{
-    background-color: #012f78;
+    /*background-color: #012f78;*/
     color: white;
     display: flex;
     justify-content: center;
@@ -244,12 +301,21 @@ main{
 }
 
 .contactAboutContainer{
+    margin-top: 40px;
     display: flex;
 }
 
 .contactAboutText, 
 .contactDragon{
     width: 50%;
+}
+
+.contactAboutText p {
+    color: grey;
+}
+
+.contactDragon img {
+    border-radius: 25px;
 }
 
 .journeyImage{
