@@ -2,42 +2,512 @@ body{
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-
-.topNav{
-    overflow: hidden;
-    background-color: #27346b;
+@font-face {
+    font-family: 'MythosTitle';
+    src: url('../assests/fonts/Mythology\ Of\ Egypt.ttf') format('woff2'),
+         url('../assests/fonts/Mythology\ Of\ Egypt.otf') format('woff'),
+    font-weight: normal;
+    font-style: normal;
 }
 
-.topNav img{
-    margin-left: 1.5em;
+.navBox{
+    background-color: rgba(255, 255, 255, 0.2); /* transparency */
+    backdrop-filter: blur(10px);               /* blur behind */
+    -webkit-backdrop-filter: blur(10px);       /* Safari support */
+
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3); /* subtle glass edge */
 }
 
-.topNav a{
-    float: left;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+.logo img{
+    height: 50px;      
+    width: auto;       
+    display: block;
+}
+
+.navLinks{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.navLinks a{
     text-decoration: none;
-    font-size: 17px;
+    color: #333;
+    font-weight: 500;
 }
 
-.topNavRight{
-    float: right;
-    margin-right: 1.5em;
+.navLinks a.active{
+    color: #4dd7ff;
 }
 
-.topNav a:hover{
-    background-color: #02ff96;
-    color: black;
-}
-
-.topNav a.active{
-    background-color: #003424;
-    color: white;
-}
-
-.headerContainer{
+.hero{
     position: relative;
+    height: 100vh;
+    background-image: url("../assests/img/homeHeader.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.heroText{
+    position: absolute;
+    right: 8%;
+    top: 55%;
+    transform: translateY(-50%);
+    text-align: left;
+    color: #f4a300;
+}
+
+.heroText h1{
+    font-size: 72px;
+    margin: 0;
+    line-height: 0.95;
+}
+
+.heroText p{
+    margin-top: 15px;
+    font-size: 28px;
+    color: #f2f2f2;
+}
+
+.heroText h1{
+    font-family: 'MythosTitle', sans-serif;
+    font-size: clamp(48px, 6vw, 110px);
+    line-height: 0.95;
+    margin: 0;
+    color: #f4a300;
+}
+
+.heroText p{
+    font-family: 'MythosTitle', sans-serif;
+    font-size: 22px;
+    color: #f2f2f2;
+}
+
+.navActions{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.searchBox{
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 8px 12px;
+    width: 220px;
+}
+
+.searchBox input{
+    border: none;
+    outline: none;
+    margin-left: 8px;
+    width: 100%;
+}
+
+.cartBtn{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.hero::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background-color: #002f7a;
+}
+
+.searchItem{
+    background-color: white;
+    border: none;
+}
+
+.bar{
+    border-right: solid #000 2px;
+}
+
+.search{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 55%;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.navbar{
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    z-index: 10;
+}
+
+
+main{
+    width: 100%;
+}
+
+/* Shared */
+.sectionLabel{
+    font-size: 14px;
+    font-weight: 700;
+    color: #f4b000;
+    margin-bottom: 15px;
+}
+
+.sectionLabel.lightBlue{
+    color: #49d9ff;
+}
+
+.sectionLabel.center{
     text-align: center;
+}
+
+.sectionLabel.yellow{
+    color: #f4b000;
+}
+
+.mainBtn{
+    display: inline-block;
+    background-color: #20d6ff;
     color: white;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 16px 34px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.mainBtn:hover{
+    background-color: #11c3ec;
+}
+
+/* Section 1 */
+.journeySection{
+    background-color: #012f78;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 70px 80px;
+    flex-wrap: wrap;
+}
+
+.contactSection{
+    background-color: #012f78;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 70px 80px;
+    flex-wrap: wrap;
+}
+
+.contactContainer{
+    display: flex;
+}
+
+.contactInfo, 
+.contactForm{
+    width: 50%;
+}
+
+.contactAbout{
+    background-color: #012f78;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 70px 80px;
+    flex-wrap: wrap;
+}
+
+.contactAboutContainer{
+    display: flex;
+}
+
+.contactAboutText, 
+.contactDragon{
+    width: 50%;
+}
+
+.journeyImage{
+    position: relative;
+    width: 430px;
+}
+
+.journeyImage img{
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+.sliderBtn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 48px;
+    cursor: pointer;
+}
+
+.sliderBtn.left{
+    left: 10px;
+}
+
+.sliderBtn.right{
+    right: 10px;
+}
+
+.journeyText{
+    max-width: 470px;
+}
+
+.journeyText h2{
+    font-size: 58px;
+    line-height: 1.05;
+    margin: 0 0 20px 0;
+    font-weight: 800;
+}
+
+.journeyText p{
+    font-size: 22px;
+    line-height: 1.7;
+}
+
+/* Section 2 */
+.sanctuarySection{
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    padding: 70px 80px;
+    flex-wrap: wrap;
+}
+
+.sanctuaryText{
+    max-width: 520px;
+}
+
+.sanctuaryText h2{
+    font-size: 52px;
+    line-height: 1.15;
+    color: #2f0f58;
+    margin: 0 0 20px 0;
+    font-weight: 800;
+}
+
+.sanctuaryText p{
+    font-size: 20px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.sanctuaryImage{
+    width: 500px;
+}
+
+.sanctuaryImage img{
+    width: 100%;
+    border-radius: 18px;
+    display: block;
+}
+
+/* Section 3 */
+.friendsSection{
+    background-color: #012f78;
+    color: white;
+    padding: 70px 60px 90px;
+    text-align: center;
+}
+
+.friendsSection h2{
+    font-size: 54px;
+    line-height: 1.15;
+    margin: 0 0 50px 0;
+    font-weight: 800;
+}
+
+.friendsGrid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.friendCard{
+    text-align: center;
+}
+
+.friendCard img{
+    width: 100%;
+    border-radius: 18px;
+    display: block;
+    margin-bottom: 18px;
+}
+
+.friendCard h3{
+    font-size: 20px;
+    line-height: 1.35;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.friendCard p{
+    font-size: 15px;
+    line-height: 1.7;
+    color: #e9eef8;
+}
+
+.centerBtn{
+    margin-top: 45px;
+}
+
+/* Footer */
+.siteFooter{
+    background-color: #f4f4f4;
+    padding: 60px 70px 30px;
+    color: #333;
+}
+
+.footerTop{
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1.2fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.footerBrand img{
+    height: 50px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.footerBrand p{
+    max-width: 280px;
+    color: #666;
+    line-height: 1.7;
+}
+
+.footerLinks h4,
+.footerSocial h4{
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 18px;
+}
+
+.footerLinks a{
+    display: block;
+    text-decoration: none;
+    color: #444;
+    margin-bottom: 14px;
+}
+
+.socialIcons{
+    display: flex;
+    gap: 12px;
+}
+
+.socialIcons img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.siteFooter hr{
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 35px 0 20px;
+}
+
+.footerBottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+.footerLegal{
+    display: flex;
+    gap: 25px;
+}
+
+.footerLegal a{
+    text-decoration: none;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 1100px){
+    .friendsGrid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footerTop{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px){
+    .journeySection,
+    .sanctuarySection,
+    .friendsSection,
+    .siteFooter{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .journeyText h2,
+    .sanctuaryText h2,
+    .friendsSection h2{
+        font-size: 36px;
+    }
+
+    .journeyText p,
+    .sanctuaryText p{
+        font-size: 18px;
+    }
+
+    .friendsGrid{
+        grid-template-columns: 1fr;
+    }
+
+    .journeyImage,
+    .sanctuaryImage{
+        width: 100%;
+    }
+
+    .footerBottom{
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
